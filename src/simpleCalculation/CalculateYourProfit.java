@@ -58,7 +58,7 @@ public class CalculateYourProfit {
 	 */
 	private void initialize() {
 		frame = new JFrame("Calculate your Profit");
-		frame.setBounds(100, 100, 546, 310);
+		frame.setBounds(100, 100, 506, 285);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
@@ -74,7 +74,8 @@ public class CalculateYourProfit {
 					profit.setText(null);
 					profitPercentage.setText(null);
 					totalBalance.setText(null);
-				} else {
+				} 
+				else {
 					currentTime.setBackground(Color.WHITE);
 					if (!symbol.getText().equals("")) {
 						Double currentPrice = latestQuote.price(symbol.getText().toUpperCase());
@@ -160,6 +161,7 @@ public class CalculateYourProfit {
 		frame.getContentPane().add(lblSell);
 
 		buyShare = new JTextField();
+		buyShare.setText("3.64");
 		buyShare.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { // buying price per
 															// share
@@ -215,6 +217,7 @@ public class CalculateYourProfit {
 		frame.getContentPane().add(lblTotalSharesBought);
 
 		totalShares = new JTextField();
+		totalShares.setText("1800");
 		totalShares.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { // Total Shares bought
 			}
@@ -224,7 +227,7 @@ public class CalculateYourProfit {
 		frame.getContentPane().add(totalShares);
 
 		JLabel lblYourTotalBalance = new JLabel("Your Total Balance");
-		lblYourTotalBalance.setBounds(44, 244, 118, 14);
+		lblYourTotalBalance.setBounds(340, 188, 118, 14);
 		frame.getContentPane().add(lblYourTotalBalance);
 
 		totalBalance = new JTextField();
@@ -233,14 +236,15 @@ public class CalculateYourProfit {
 			}
 		});
 		totalBalance.setColumns(10);
-		totalBalance.setBounds(193, 241, 102, 20);
+		totalBalance.setBounds(340, 213, 102, 20);
 		frame.getContentPane().add(totalBalance);
 
-		JLabel lblStockTickerSymbol = new JLabel("Just give Stock Ticker Symbol");
+		JLabel lblStockTickerSymbol = new JLabel("Stock Ticker Symbol");
 		lblStockTickerSymbol.setBounds(340, 52, 198, 14);
 		frame.getContentPane().add(lblStockTickerSymbol);
 
 		symbol = new JTextField();
+		symbol.setText("EVEP");
 		symbol.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) { // Getting Symbol
 			}
@@ -249,7 +253,7 @@ public class CalculateYourProfit {
 		symbol.setBounds(340, 76, 102, 20);
 		frame.getContentPane().add(symbol);
 
-		JLabel lblNewLabel = new JLabel("Wanna get the latest quote?");
+		JLabel lblNewLabel = new JLabel("Get the latest quote!");
 		lblNewLabel.setBounds(340, 39, 198, 14);
 		frame.getContentPane().add(lblNewLabel);
 
@@ -266,7 +270,7 @@ public class CalculateYourProfit {
 		currentTime.setBounds(87, 135, 208, 20);
 		frame.getContentPane().add(currentTime);
 
-		JButton btnCalculator = new JButton("Need a Calculator");
+		JButton btnCalculator = new JButton("Calculator?");
 		btnCalculator.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) { // calculator
 				try {
@@ -277,7 +281,7 @@ public class CalculateYourProfit {
 
 			}
 		});
-		btnCalculator.setBounds(340, 134, 139, 23);
+		btnCalculator.setBounds(340, 134, 102, 23);
 		frame.getContentPane().add(btnCalculator);
 	}
 }

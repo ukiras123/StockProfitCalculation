@@ -29,7 +29,14 @@ public class GetLatestStockQuotes {
 		int from = html.indexOf(">", p); // ">" index
 		int to = html.indexOf("</span>", from); // "</span>" index
 		String price = html.substring(from + 1, to);
+		if (price.matches("(1|2|3|4|5|6|7|8|9|0).*"))
+		{
 		return Double.parseDouble(price.replaceAll(",", ""));
+		}
+		else
+		{
+			return 0.00;
+		}
 	}
 
 	// Given symbol, get current stock name.
